@@ -17,24 +17,24 @@
 </div>
  
   {{#each stack in model}}
-<div class="single-stack">
-  <h6 >{{stack.name}}</h6>
-<p>{{stack.environment}} </p>
-<button>Use</button>
-<img src="https://iili.io/JR0TVa4.png" alt="history">
-</div>
+  <div class="single-stack">
+    <h6>{{stack.name}}</h6>
+    <p>{{stack.environment}}</p>  
+    <button {{action 'openEmailPopup'}}>Use</button>
+    <img src="https://iili.io/JR0TVa4.png" alt="history">
+  </div>
 {{/each}}
 
-
 </div>
 </div>
 
-<div class="email-verify-div">
-    <img src="https://iili.io/JRV5cZv.png" alt="cross-icon">
-<form action="">
-   <p>email
-    {{input type="email" name="email"}}
- </p>
-</form>
- <button type="submit">Verify</button>
-</div>
+{{#if isEmailPopupOpen}} <div class="email-popup-div">
+    <div class="email-verify-div">
+      <img src="https://iili.io/JRV5cZv.png" alt="cross-icon" {{ action 'closeEmailPopup'}}>
+      <form >
+        <p>Email {{input type="email" name="email" ¸=email}}</p>
+        <button {{ action 'verifyEmail'}} type="submit">Verify</button>
+      </form>
+    </div>
+  </div>
+{{/if}}
