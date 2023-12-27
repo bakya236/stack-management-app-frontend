@@ -4,7 +4,8 @@ export default Ember.Route.extend({
 
     model(params) {
         console.log(params);
-        var stackId = params.id;
+        var stackId = params.stack_id;
+        console.log(stackId)
 
         return fetch(`http://localhost:8080/usagehistory/${stackId}`)
         .then(response => {

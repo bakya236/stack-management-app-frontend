@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('stacks');
-  this.route('usage-history', { path: '/usagehistory/:id'});
+  this.route('usage-history', { path: '/usagehistory/:stack_id'});
 });
 
 export default Router;

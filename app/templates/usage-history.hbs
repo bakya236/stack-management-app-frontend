@@ -1,5 +1,9 @@
-<table class="table">
-  <thead>
+<div class="usagehistory-container bg-light"> 
+<div class="container d-flex flex-column align-items-center justify-content-center h-100 bg-body-tertiary rounded text-center">
+
+    <h5>{{usage.name}}</h5>
+<table class="table shadow-sm p-4">
+  <thead class="bg-primary text-white">
     <tr>
       <th scope="col">User Email</th>
       <th scope="col">Frontend Branch</th>
@@ -10,10 +14,15 @@
 
     {{#each usage in model}} 
     <tr>
-      <td>{{usage.userEmail}}</td>
+      <td><a href="mailto:{{usage.userEmail}}">{{usage.userEmail}}</a></td>
       <td>{{usage.frontEndBranch}}</td>
       <td>{{usage.backEndBranch}}</td>
     </tr>
     {{/each}}
+
+    
   </tbody>
 </table>
+</div>
+</div>
+

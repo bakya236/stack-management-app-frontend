@@ -1,7 +1,7 @@
 
 
 <div class="stack">
-  <div class="home-div"><img src="https://iili.io/JR0VRSI.png" alt="home icon"></div>
+  {{!-- {{--https://iili.io/JR0VRSI.png--}}
 
 <div class="add-new-stack-btn">
 <button type="button" >Add new stack</button>
@@ -21,10 +21,13 @@
   <h6 >{{stack.name}}</h6>
 <p>{{stack.environment}} </p>
 <button>Use</button>
-<img src="https://iili.io/JR0TVa4.png" alt="history">
+        {{!-- Ember automatically generates a URL with those parameters and makes them part of the URL. 
+        The parameters are then accessible in the target route's model hook as an object with corresponding keys. --}}
+        {{#link-to "usage-history" stack.id target="_self"}}
+        <img src="https://iili.io/JR0TVa4.png" alt="history">
+        {{/link-to}}
 </div>
 {{/each}}
-
 
 </div>
 </div>
@@ -37,4 +40,14 @@
  </p>
 </form>
  <button type="submit">Verify</button>
+</div>
+
+
+<div class="container">
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+
 </div>
