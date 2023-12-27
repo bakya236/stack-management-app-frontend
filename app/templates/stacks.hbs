@@ -17,10 +17,12 @@
 </div>
  
   {{#each stack in model}}
+
 <div class="single-stack">
   <h6 >{{stack.name}}</h6>
 <p>{{stack.environment}} </p>
 <button>Use</button>
+
         {{!-- Ember automatically generates a URL with those parameters and makes them part of the URL. 
         The parameters are then accessible in the target route's model hook as an object with corresponding keys. --}}
         {{#link-to "usage-history" stack.id target="_self"}}
@@ -32,22 +34,21 @@
 </div>
 </div>
 
-<div class="email-verify-div">
-    <img src="https://iili.io/JRV5cZv.png" alt="cross-icon">
-<form action="">
-   <p>email
-    {{input type="email" name="email"}}
- </p>
-</form>
- <button type="submit">Verify</button>
-</div>
 
+{{#if isEmailPopupOpen}} <div class="email-popup-div">
+    <div class="email-verify-div">
+      <img src="https://iili.io/JRV5cZv.png" alt="cross-icon" {{ action 'closeEmailPopup'}}>
+      <form >
+        <p>Email {{input type="email" name="email" ¸=email}}</p>
+        <button {{ action 'verifyEmail'}} type="submit">Verify</button>
+      </form>
+    </div>
+  </div>
+{{/if}}
 
 <div class="container">
 
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Email address</label>
   <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-
 </div>
