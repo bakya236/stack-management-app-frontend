@@ -1,5 +1,40 @@
-{{#each stacks in model}}
 
-<li> {{stacks.name}}</li>
 
+<div class="stack">
+  <div class="home-div"><img src="https://iili.io/JR0VRSI.png" alt="home icon"></div>
+
+<div class="add-new-stack-btn">
+<button type="button" >Add new stack</button>
+  </div>
+<div class="stack-container-list">
+  
+ <div class="stacks-header">
+  <h5>Stacks</h5>
+  <h5>Environment</h5>
+  <h5>Availability</h5>
+  <h5>History</h5>
+
+</div>
+ 
+  {{#each stack in model}}
+<div class="single-stack">
+  <h6 >{{stack.name}}</h6>
+<p>{{stack.environment}} </p>
+<button>Use</button>
+<img src="https://iili.io/JR0TVa4.png" alt="history">
+</div>
 {{/each}}
+
+
+</div>
+</div>
+
+<div class="email-verify-div">
+    <img src="https://iili.io/JRV5cZv.png" alt="cross-icon">
+<form action="">
+   <p>email
+    {{input type="email" name="email"}}
+ </p>
+</form>
+ <button type="submit">Verify</button>
+</div>
