@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">User Email</th>
+      <th scope="col">Frontend Branch</th>
+      <th scope="col">Backend Branch</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each usage in model}} 
+    <tr>
+      <td>{{usage.userEmail}}</td>
+      <td>{{usage.frontEndBranch}}</td>
+      <td>{{usage.backEndBranch}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
