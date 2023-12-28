@@ -1,11 +1,14 @@
 
 
 <div class="stack">
-  {{!-- {{--https://iili.io/JR0VRSI.png--}}
+  
+
+  {{!-- https://iili.io/JR0VRSI.png --}}
 
 <div class="add-new-stack-btn">
-<button type="button" >Add new stack</button>
-  </div>
+<button {{action 'openAddStackPopup'}} type="button" >Add new stack</button>
+</div>
+
 <div class="stack-container-list">
   
  <div class="stacks-header">
@@ -17,25 +20,22 @@
 </div>
  
   {{#each stack in model}}
+  <div class="single-stack">
+    <h6>{{stack.name}}</h6>
+    <p>{{stack.environment}}</p>  
+    <button {{action 'openEmailPopup'}}>Use</button>
 
-<div class="single-stack">
-  <h6 >{{stack.name}}</h6>
-<p>{{stack.environment}} </p>
-<button>Use</button>
-
-        {{!-- Ember automatically generates a URL with those parameters and makes them part of the URL. 
-        The parameters are then accessible in the target route's model hook as an object with corresponding keys. --}}
-        {{#link-to "usage-history" stack.id target="_self"}}
-        <img src="https://iili.io/JR0TVa4.png" alt="history">
-        {{/link-to}}
-</div>
-{{/each}}
+    {{#link-to 'usage-history' stack.id }}
+    <img src="https://iili.io/JR0TVa4.png" alt="history">
+    {{/link-to}}
+  </div>
+  
+    {{/each}}
 
 </div>
 </div>
 
-
-{{#if isEmailPopupOpen}} <div class="email-popup-div">
+{{#if isEmailPopupOpen}} <div class="popup">
     <div class="email-verify-div">
       <img src="https://iili.io/JRV5cZv.png" alt="cross-icon" {{ action 'closeEmailPopup'}}>
       <form >
@@ -46,9 +46,20 @@
   </div>
 {{/if}}
 
-<div class="container">
+{{#if isAddStackPopupOpen}} 
+<div class="add-new-stack-div popup">
+  <div class="mb-3 add-stack-div">
+    <img src="https://iili.io/JRV5cZv.png" alt="cross-icon" {{action 'closeEmailPopup'}}>
+    <form method="post">
+      <label for="name" class="form-label">Stack name</label>
+      {{input type="text" class="form-control" id="name" placeholder="stack name" value=name}}
 
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <label for="environment" class="form-label">Environment</label>
+      {{input type="text" class="form-control" id="environment" placeholder="environment" value=environment}}
+
+      <button {{action 'addStack'}} type="submit">save</button>    
+
+    </form>
+  </div>
 </div>
+{{/if}}

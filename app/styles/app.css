@@ -17,8 +17,7 @@ div.stack-container-list{
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    margin: 10vh 2vw 5vh 8vw;
-    /* margin: 10vh 2vw 4vh 2vw ; */
+    margin: 11vh 3vw 1vh 8vw;
     padding: 2vh 2vw 4vh 2vw;
 }
 
@@ -42,12 +41,14 @@ div.stack-container-list{
 .single-stack:hover{
     box-shadow: 0px 8px 24px 0px rgba(140, 149, 159, 0.2);
 }
+
 .single-stack h6{
     margin-left: 2vw;
     margin-top: 1vh;
     width:24vw;
 
 }
+
 .single-stack p{
  margin-top: 1vh;
  width:20vw;
@@ -71,28 +72,42 @@ align-items: center;
 }
 
 .stack{
-display: inline-block;
-
+display: flex;
 }
-/* .home-div{
+
+/* side div */
+
+.home-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; 
+    width: 6vw;  
+    background-color: rgb(2, 2, 81); 
+    border-left: 1px solid #ccc; 
+}
+
+.home-div{
     padding: 5vh 1.5vw;
    
     background-color: rgb(2, 2, 81);
-} */
+}
 .home-div img{
     width:3vw;
-    /* height: 5.5vh;  */
+    height: 5.5vh;
 }
 .home-div img:hover{
     cursor: pointer;
 }
+
+/* add new stack button */
+
 .add-new-stack-btn{
     position: absolute;
     right:10vw;
-  margin-top: 3vh;
- 
-   
+    margin-top: 3vh;
 }
+
 .add-new-stack-btn button{
     border: none;
     background-color: rgb(2, 2, 81);
@@ -100,38 +115,105 @@ display: inline-block;
     color: white;
     border-radius: 5px;
 }
+
 .add-new-stack-btn button:hover{
     box-shadow: 0px 12px 28px 0px rgba(140, 149, 159, 0.3);
 }
-/*cros Icon---*/
-.email-verify-div img{
-    width:1vw;
-    height: 1.7vh;
+
+/* cross Icon---*/
+.popup img{
+    width:1.7vw;
+    height: 3.1vh;
     margin: 2vh 1vw;
     border-radius: 50%;
     padding: 5px;
 }
-.email-verify-div img:hover{
+.email-verify-div  img:hover{
     cursor: pointer;
     background-color: rgb(228, 228, 228);
 }
-.email-verify-div{
+.email-verify-div {
     width: 25vw;
     height: 28vh;
     background-color: rgb(255, 255, 255);
     padding: 1vh 0.6vw;
     border-radius: 10px;
-    /* display: none; */
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.02), 0px 0px 0px 1px rgba(27, 31, 35, 0.15);
 }
-
 .email-verify-div form{
 margin: 2vh 2vw;
 }
 .email-verify-div input[type="email"] {
-  padding: 2px 5px;
-  border: 1px solid gray;
-  border-radius: 5px;
+padding: 2px 5px;
+border: 1px solid gray;
+border-radius: 5px;
 margin-left: 1vw;
+margin-top: 3vh;
+height: 3.5vh;
+width:16vw;
 }
+
+.email-verify-div button{
+    border:none;
+    background-color: rgb(2, 2, 81);
+    color: white;
+    padding: .8vh 2vw;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-left: 15vw;
+    margin-top: 2vh;
+}
+
+
+.email-verify-div  button:hover{
+    box-shadow: 0px 12px 28px 0px rgba(140, 149, 159, 0.3);
+}
+
+/* usage history */
+
+.usagehistory-container{
+    height: 100vh;
+}
+
+/* popup  */
+
+.popup{
+    display: flex;
+    background-color: rgba(39, 39, 39, 0.563);
+    width:100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    position: fixed;
+}
+
+
+/* add new stack conatiner*/
+
+.add-stack-div{
+    width: 25vw;
+    height: 28vh;
+    background-color: rgb(255, 255, 255);
+    padding: 1vh 0.6vw;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.02), 0px 0px 0px 1px rgba(27, 31, 35, 0.15);
+}
+
+.add-stack-div button{
+    border:none;
+    background-color: rgb(2, 2, 81);
+    color: white;
+    padding: .8vh 2vw;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-left: 15vw;
+    margin-top: 2vh;
+}
+
+
+
+
+
   
